@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "wtf"
-version = "0.1-1"
+version = "0.2-1"
 -- LuaDist source
 source = {
-  tag = "0.1-1",
+  tag = "0.2-1",
   url = "git://github.com/LuaDist-testing/wtf.git"
 }
 -- Original source
 -- source = {
 --    url = "git+https://github.com/honeybot/wtf",
---    tag = "0.1"
+--    tag = "0.2"
 -- }
 description = {
    summary = "WTF is a Web Tailoring Framework built on top of Nginx/Openresty",
@@ -18,12 +18,12 @@ description = {
    license = "MIT"
 }
 dependencies = {
-   "luafilesystem >= 1.7"
+   "luafilesystem >= 1.7",
+   "lua-cjson >= 2.1"
 }
 build = {
    type = "builtin",
    modules = {
-      ["wtf.actions.log"] = "wtf/actions/log.lua",
       ["wtf.core.classes.action"] = "wtf/core/classes/action.lua",
       ["wtf.core.classes.configurable_object"] = "wtf/core/classes/configurable_object.lua",
       ["wtf.core.classes.instance"] = "wtf/core/classes/instance.lua",
@@ -34,8 +34,5 @@ build = {
       ["wtf.core.classes.storage"] = "wtf/core/classes/storage.lua",
       ["wtf.core.loader"] = "wtf/core/loader.lua",
       ["wtf.core.tools"] = "wtf/core/tools.lua",
-      ["wtf.plugins.demo.hello_world"] = "wtf/plugins/demo/hello_world.lua",
-      ["wtf.solvers.demo_solver"] = "wtf/solvers/demo_solver.lua"
-   },
-   copy_directories = {"nginx", "policy", "vendor"}
+      }  
 }
